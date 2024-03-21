@@ -1,0 +1,57 @@
+// JS  Вам будет дано 2 параметра: низкое и максимальное число. Ваша цель состоит в том, чтобы напечатать все числа между меньшим и большим, и для каждого из этих чисел напечатать, делится ли число на 3. Если число делится на 3, выведите слово "div3" сразу после числа
+function nums(minn,maxx){
+    for(let i = minn; i < maxx; i++){
+        console.log(i);
+        if( i % 3 == 0){
+            console.log( '- div3');
+        }
+    }
+    
+}
+// const low = 3;
+// const high = 33;
+let res = nums(3,33);
+console.log(res);
+
+
+// JS Напишите функцию, которая принимает массив целых чисел и возвращает сумму целых чисел после прибавления 1 к каждому.
+function arr(mas){
+    let sum = 0;
+    for(let i = 0; i < mas.length; i++){
+        sum += mas[i] + 1;
+    }
+    return sum;
+}
+let mass = [1,32,4,5,67,8,7,2];
+let res = arr(mass);
+console.log(res);  // 134
+
+
+// JS
+// Если мы перечислим все натуральные числа меньше 10, кратные 3 или 5, мы получим 3, 5, 6 и 9. Сумма этих кратных равна 23.
+// Найдите сумму всех чисел, кратных 3 или 5, меньше 1000.
+
+let natnum = 1000;
+let sum = 0;
+for(let j = 0; j < natnum; j++){
+if(j %  3 == 0 || j % 5 == 0){
+    sum += j;
+}
+
+}
+console.log(sum); //233168
+
+
+// JS
+//Факториальные числа. Если это 5, то ваш код должен умножать 1*2*3*4*5
+function fact(num){
+    if( num == 0 || num == 1){
+        return 1;
+    }
+    else {
+        return num * fact( num -1 );
+    }
+}
+let fnum = 8;
+let fact_num = fact(fnum);
+console.log(`Factorial of number ${fnum} equal to ${fact_num}`); // 40320
