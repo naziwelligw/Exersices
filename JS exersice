@@ -55,3 +55,71 @@ function fact(num){
 let fnum = 8;
 let fact_num = fact(fnum);
 console.log(`Factorial of number ${fnum} equal to ${fact_num}`); // 40320
+
+//  JS Создать функцию для подтверждения того, что строка заканчивается указанной подстрокой.
+
+const endsWith = (str, postfix) => { 
+  const strLength = str.length; 
+  const postfixLength = postfix.length;  
+
+  if (postfixLength > strLength) {
+    return false;
+  }
+
+  const startIndex = strLength - postfixLength;
+
+  for (let i = 0; i < postfixLength; i++) {
+    if (str[startIndex + i] !== postfix[i]) {
+      return false;
+    }
+  }
+  
+  return true;
+};
+
+console.log(endsWith("Test", "t")); // true
+console.log(endsWith("Open the door table", "door")); // false
+console.log(endsWith("Test", "est")); // true
+console.log(endsWith("Test", "st")); // true
+console.log(endsWith("Test", "ab")); // false
+
+
+// JS Перевести первую букву каждого слова в предложении в верхний регистр, исключив конкретные слова.
+
+let sentence = "I love orange and apple";
+let words = ["and"];
+let task = sentence.split(' ');
+
+for (let i = 0; i < task.length; i++) {
+    let currentWord = task[i].toLowerCase();
+    if (!words.includes(currentWord)) {
+        task[i] = currentWord[0].toUpperCase() + currentWord.substring(1);
+    }
+}
+
+let res = task.join(" ");
+console.log(res);   // resul - I Love Orange and Apple
+// JS Найти  самое длинное слово: «I love  Javascript»
+
+
+function findlw(str) {
+  let arrStr = str.split(' ');
+  let wordLength = 0;
+  let longestWord;
+
+  for (let i = 0; i < arrStr.length; i++) {
+    wordLength = arrStr[1].length;
+
+    if (arrStr[i].length > wordLength) {
+      longestWord = arrStr[i];
+
+      return longestWord;
+    }
+
+  }
+};
+
+// Вызовы функции для проверки
+console.log(
+  findlw("I love Javascript")
+); // вернет Javascript
